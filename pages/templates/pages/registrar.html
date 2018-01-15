@@ -8,37 +8,35 @@
             <div class="container flex-center">
                 <div class="d-flex align-items-center content-height">
                     <div class="row flex-center pt-5 mt-3">
-                        <div class="col-md-6 text-center text-md-left mb-5">
-                            <div class="white-text">
-                                <h1 class="h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Apuesta ahora! </h1>
-                                <hr class="hr-light mb-5 wow fadeInLeft" data-wow-delay="0.3s">
-
-                                <br>
-                                <a href="/usuario/registrar" class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Registrate</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-5">
+                        <div class="col-md-12 col-xl-12">
                             <!--Form-->
                             <div class="card wow fadeInRight" data-wow-delay="0.3s">
                                 <div class="card-body">
                                     <!--Header-->
                                     <div class="text-center">
                                         <h3 class="white-text">
-                                            <i class="fa fa-user white-text"></i> Ingresar</h3>
+                                            <i class="fa fa-user white-text"></i> Registrar</h3>
                                         <hr class="hr-light">
                                     </div>
-                                    <form method="POST" action=""> {% csrf_token %}
+                                    <form method="POST" action="">{% csrf_token %}
                                         <div class="md-form">
                                             <input type="text" name="username" id="" class="form-control" style="color:white">
                                             <label for="form2" class="active">Usuario</label>
                                         </div>
                                         <div class="md-form">
-                                            <input name="password" type="password" class="form-control" style="color:white">
+                                            <input type="email" name="email" id="" class="form-control" style="color:white">
+                                            <label for="form2" class="active">Correo</label>
+                                        </div>
+                                        <div class="md-form">
+                                            <input name="password1" type="password" class="form-control" style="color:white">
+                                            <label for="form2" class="active">Contraseña</label>
+                                        </div>
+                                        <div class="md-form">
+                                            <input name="password2" type="password" class="form-control" style="color:white">
                                             <label for="form2" class="active">Repetir contraseña</label>
                                         </div>
                                         <div class="text-center">
-                                            <input class="btn btn-indigo waves-effect waves-light" type="submit" value="Ingresar" />
+                                            <input class="btn btn-indigo waves-effect waves-light" type="submit" value="Registrar" />
                                             <hr class="hr-light mb-3 mt-4">
                                         </div>
                                     </form>
