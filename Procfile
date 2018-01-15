@@ -1,0 +1,1 @@
+web: gunicorn mundial.wsgi --log-file - 
