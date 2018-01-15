@@ -25,7 +25,7 @@ SECRET_KEY = 'f)#s5m&^z5drt@^_t)k3+_883u9t3w99ekfg=s0)d)22-7s%if'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['perualmundial.herokuapp.com']
+ALLOWED_HOSTS = ['mundialrusiasw2.herokuapp.com/']
 
 
 # Application definition
