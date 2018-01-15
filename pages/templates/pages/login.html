@@ -3,19 +3,42 @@
 <header>
 
     <!--Intro Section-->
-    <section class="view intro-2 hm-gradient">
+    <section class="vista intro-2 hm-gradient">
         <div class="full-bg-img">
             <div class="container flex-center">
                 <div class="d-flex align-items-center content-height">
                     <div class="row flex-center pt-5 mt-3">
                         <div class="col-md-6 text-center text-md-left mb-5">
                             <div class="white-text">
-                                <h1 class="h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Sign up right now! </h1>
+                                <h1 class="h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Regístrate ahora! </h1>
                                 <hr class="hr-light mb-5 wow fadeInLeft" data-wow-delay="0.3s">
 
                                 <br>
-                                <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
+                                <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Aprende más</a>
                             </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-5">
+                            <!--Form-->
+                            <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                                <div class="card-body">
+                                    <!--Header-->
+                                    <div class="text-center">
+                                        <h3 class="white-text">
+                                            <i class="fa fa-user white-text"></i> Ingresar</h3>
+                                        <hr class="hr-light">
+                                    </div>
+                                    <form method="POST" action=""> {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <div class="text-center">
+                                            <input class="btn btn-indigo waves-effect waves-light" type="submit" value="Ingresar" />
+                                            <hr class="hr-light mb-3 mt-4">
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <!--/.Form-->
                         </div>
                     </div>
                 </div>

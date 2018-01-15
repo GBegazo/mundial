@@ -1,13 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="full-height">
 
 <head>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Proyecto de Software2 Rusia Mundial 2018</title>
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/previews/docs/latest/css/compiled.min.css">
@@ -19,6 +18,23 @@
 
 
     <style>
+        .vista .full-bg-img,
+        .vista .mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .full-height,
+        .full-height body,
+        .full-height header,
+        .full-height header .vista {
+            height: 100% !important;
+        }
+
         .intro-2 {
             background: url("https://pbs.twimg.com/profile_background_images/626100471086850049/8WBVDw0m.jpg")no-repeat center center;
             background-size: cover;
@@ -65,7 +81,7 @@
             .full-height,
             .full-height body,
             .full-height header,
-            .full-height header .view {
+            .full-height header .vista {
                 height: 1040px;
             }
         }
