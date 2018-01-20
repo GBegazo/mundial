@@ -1,1 +1,1 @@
-web: gunicorn refugio.wsgi --log-file -
+web: gunicorn rusia2018sw2.wsgi --log-file -
