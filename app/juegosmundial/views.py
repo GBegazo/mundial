@@ -9,4 +9,15 @@ def index_juegosmundial(request):
 
 def juegosmundialbien(request):
 	return render(request, 'usuario/bienvenido.html')
+def triviadescrip(request):
+	return render(request, 'juegos/DescripTrivia.html')	
 
+def equipoidealdescrip(request):
+	return render(request, 'juegos/DescripEquipoIdeal.html')	
+
+def polladescrip(request):
+	return render(request, 'juegos/DescripPolla.html')
+
+
+def triviajuegos(request):
+	return render(request, 'juegos/TriviaJuego.html')

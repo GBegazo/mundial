@@ -5,7 +5,7 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% staticfiles 'css/prueba.css' %}">
+	<link rel="stylesheet" href="{% static 'css/prueba.css' %}">
 	<!--Agregando-->
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	
@@ -18,7 +18,7 @@
 
 
   <style>
-
+{% block style%}  {%endblock %}
        input {
        	 width: 40%;
        }
@@ -55,6 +55,6 @@
 
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-
+{% block script%}  {%endblock %}
 </body>
 </html>
