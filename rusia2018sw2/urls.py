@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from django.contrib.auth.views import login
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +26,4 @@ urlpatterns = [
     url(r'^usuario/', include('app.usuario.urls', namespace='usuario')),
     url(r'^$', login,{'template_name':'usuario/index.html'},name='login'),
 
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
