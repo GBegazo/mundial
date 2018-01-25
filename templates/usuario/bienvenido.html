@@ -15,6 +15,7 @@
 {% block content %}
   {% csrf_token %}
  
+
 <br><br><br><br><br><br>
 <div class="row">
   <div class="col-lg-4">
@@ -27,11 +28,11 @@
 
     <div class="w3-container w3-center">
       <br>
-      <img href="{% static 'img/trivia.png' %}" alt="Avatar" style="width:100%">
-
+      <img src="http://www.unica.edu.pe/publicacion/App/trivia/img/trivia.png" alt="Avatar" style="width:100%">
+	<br>
       <div class="w3-section">
         <a href="{% url 'juegosmundial:triviainfo' %}" class="w3-button w3-blue">Trivia</a>
-
+	<br>
       </div>
     </div>
 
@@ -50,7 +51,7 @@
 
     <div class="w3-container w3-center">
       <br>
-      <img src="{% static 'img/OnceIdeal.png' %}" alt="Avatar" style="width:80%">
+      <img src="https://comutricolor.com/wp-content/uploads/2016/03/Once-Ideal-Eliminatoria-Rusia-2018.png" alt="Avatar" style="width:80%">
 
       <div class="w3-section">
         <a href="{% url 'juegosmundial:equipoidealinfo' %}" class="w3-button w3-blue">Once Ideal</a>
@@ -76,7 +77,7 @@
 
     <div class="w3-container w3-center">
       <br>
-      <img src="{% static 'img/apuestas.jpg' %}" alt="Avatar" style="width:70%">
+      <img src="https://www.trebol-apuestas.com/wp-content/uploads/2017/11/El-f%C3%BAtbol-puede-existir-sin-las-apuestas.jpg" alt="Avatar" style="width:70%">
 
       <div class="w3-section">
         <a href="{% url 'juegosmundial:pollainfo' %}" class="w3-button w3-blue">Polla</a>
@@ -93,7 +94,7 @@
   </div>
 
 </div>
-
+ 
  
   {% endblock %}
   {% block script%}  
