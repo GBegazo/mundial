@@ -109,10 +109,14 @@
 
     $("label.btn").on('click',function () {
         if(now > 9){
+            console.log("no es en carga");
             alert("No mas preguntas");
         }else{
             /////////
+            if (now<9) {
             carga();
+            }
+
             ancho = ancho + 10;
             document.getElementById("progresopreg").style.width = ancho+"%";
             document.getElementById("progresopreg").innerHTML = ancho+"%";
@@ -170,7 +174,7 @@
             return 'CORRECTO';
         }
     }; 
-}); 
+
 
 
 var cronometro;
@@ -184,9 +188,51 @@ var cronometro;
         function(){
         if(contador_s>15)
         {
-            clearInterval(cronometro);
-        }else{
 
+
+console.log("nowww"+now);
+        if(now == 9){
+            
+            ancho = ancho + 10;
+            document.getElementById("progresopreg").style.width = ancho+"%";
+            document.getElementById("progresopreg").innerHTML = ancho+"%";
+            
+            console.log("es en carga");
+            alert("No mas preguntas");
+        
+            clearInterval(cronometro);
+            
+
+            now++;
+            }else if(now<=8) {
+            /////////
+            clearInterval(cronometro);
+            carga();
+            ancho = ancho + 10;
+            document.getElementById("progresopreg").style.width = ancho+"%";
+            document.getElementById("progresopreg").innerHTML = ancho+"%";
+            //////////
+            //var choice = $(this).find('input:radio').val();
+            var choice = 5;
+            $('#loadbar').show();
+            $('#quiz').fadeOut();
+            now++;
+            setTimeout(function(){
+                $( "#answer" ).html('INCORRECTO');      
+                $('#quiz').show();
+                $('#loadbar').fadeOut();
+                $(this).changeQuestion();
+                $(this).changeOptions();
+                $("input:radio").attr("checked", false);
+                $(".foc").removeClass("active");
+                $(".foc").removeClass("focus");
+               
+            }, 1500);
+        }
+   
+           
+
+        }else{
 
         document.getElementById("temporizador").innerHTML = contador_s;
         contador_s++;
@@ -199,5 +245,22 @@ var cronometro;
         }
             ,1000);
 
-    }
+    };
+    carga();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}); 
 

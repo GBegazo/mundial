@@ -15,7 +15,7 @@
   {% csrf_token %}
 
 <div class="container">
-  <h2 style="text-align: center">Progreso de preguntas completadas:</h2>
+  <h2 style="text-align: center" class="well">Progreso de preguntas completadas:</h2>
   <div class="progress">
     <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%" id="progresopreg">
       0%
@@ -25,7 +25,7 @@
 
 <div class="row">
   <div class="col-lg-6">
-    <div class="w3-container">
+    <div class="w3-container" style="margin-left: 45%">
         <div class="w3-card-4 w3-blue-grey" style="width:50%">
             <div class="w3-container w3-center">
                 <h1>Puntos</h1>
@@ -118,7 +118,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script src="{% static 'js/triviajuegojs.js' %}" onload="carga()"></script>
+  <script src="{% static 'js/triviajuegojs.js' %}" ></script>
 
 
 
