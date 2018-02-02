@@ -1,4 +1,6 @@
 
+
+
     $(function(){
 
         var docs = ["", 
@@ -108,6 +110,7 @@
     /////////////
 
     $("label.btn").on('click',function () {
+        console.log("now btn "+now);
         if(now > 9){
             console.log("no es en carga");
             alert("No mas preguntas");
@@ -116,7 +119,7 @@
             if (now<9) {
             carga();
             }
-
+            console.log("now btn222 "+now);
             ancho = ancho + 10;
             document.getElementById("progresopreg").style.width = ancho+"%";
             document.getElementById("progresopreg").innerHTML = ancho+"%";
@@ -186,64 +189,50 @@ var cronometro;
         clearInterval(cronometro);
         cronometro = setInterval(
         function(){
-        if(contador_s>15)
-        {
-
-
-console.log("nowww"+now);
-        if(now == 9){
+        if(contador_s>15){
+                clearInterval(cronometro);
+                console.log("nowww"+now);
+            if(now == 9){
             
-            ancho = ancho + 10;
-            document.getElementById("progresopreg").style.width = ancho+"%";
-            document.getElementById("progresopreg").innerHTML = ancho+"%";
+                ancho = ancho + 10;
+                document.getElementById("progresopreg").style.width = ancho+"%";
+                document.getElementById("progresopreg").innerHTML = ancho+"%";
             
-            console.log("es en carga");
-            alert("No mas preguntas");
+                console.log("es en carga");
+                alert("No mas preguntas");
         
-            clearInterval(cronometro);
+                clearInterval(cronometro);
             
-
-            now++;
+                now++;
             }else if(now<=8) {
             /////////
-            clearInterval(cronometro);
-            carga();
-            ancho = ancho + 10;
-            document.getElementById("progresopreg").style.width = ancho+"%";
-            document.getElementById("progresopreg").innerHTML = ancho+"%";
+                clearInterval(cronometro);
+                carga();
+                ancho = ancho + 10;
+                document.getElementById("progresopreg").style.width = ancho+"%";
+                document.getElementById("progresopreg").innerHTML = ancho+"%";
             //////////
             //var choice = $(this).find('input:radio').val();
-            var choice = 5;
-            $('#loadbar').show();
-            $('#quiz').fadeOut();
-            now++;
-            setTimeout(function(){
-                $( "#answer" ).html('INCORRECTO');      
-                $('#quiz').show();
-                $('#loadbar').fadeOut();
-                $(this).changeQuestion();
-                $(this).changeOptions();
-                $("input:radio").attr("checked", false);
-                $(".foc").removeClass("active");
-                $(".foc").removeClass("focus");
-               
-            }, 1500);
-        }
-   
-           
-
-        }else{
-
-        document.getElementById("temporizador").innerHTML = contador_s;
-        contador_s++;
-
-
-          //      progress = document.getElementById("progressbar");
-          //      progressbar.value = progress.value+1;
-
+                var choice = 5;
+                $('#loadbar').show();
+                $('#quiz').fadeOut();
+                now++;
+                setTimeout(function(){
+                    $( "#answer" ).html('INCORRECTO');      
+                    $('#quiz').show();
+                    $('#loadbar').fadeOut();
+                    $(this).changeQuestion();
+                    $(this).changeOptions();
+                    $("input:radio").attr("checked", false);
+                    $(".foc").removeClass("active");
+                    $(".foc").removeClass("focus");
+                }, 1500);
             }
-        }
-            ,1000);
+        }else{
+            document.getElementById("temporizador").innerHTML = contador_s;
+            contador_s++;
+            }
+        } ,1000);
 
     };
     carga();

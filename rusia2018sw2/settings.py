@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'rusia2018sw2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hvxqovgc',
-        'USER': 'hvxqovgc',
-        'PASSWORD': 'b2seOFHq1KWXLR-3TCgCpO01DAyT9BEt',
-        'HOST': 'baasu.db.elephantsql.com',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'Belcorp2017',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }

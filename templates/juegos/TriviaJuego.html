@@ -56,6 +56,31 @@
 </div>
 <br>
 
+{% if preguntas %}
+{% for pregunta in preguntas %}
+
+{% if pregunta.id == 2 %}
+    <h3>hola</h3>
+
+{% endif %}
+<h2>{{ pregunta.id }}</h2>
+<h2>{{ pregunta.descripcion }}</h2>
+
+  {% for respuesta in pregunta.respuestas.all %}
+  <h2>{{ respuesta.descripcion }}</h2>
+  {% endfor %}
+
+<h2>{{ pregunta.correcta }}</h2>
+
+{% endfor %}
+{% else %}
+
+<h1>No Existen Preguntas</h1>
+
+{% endif %}
+
+
+
  <div class="container-fluid bg-info">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -99,6 +124,7 @@
    </div>
    <div class="modal-footer text-muted">
     <span id="answer"></span>
+}
 </div>
 </div>
 </div>
@@ -119,6 +145,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script src="{% static 'js/triviajuegojs.js' %}" ></script>
+  <script src="{% static 'js/conexion.js' %}" ></script>
 
 
 
