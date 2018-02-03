@@ -33,3 +33,6 @@ def preguntas_list(request):
 def listado(request):
 	lista = serializers.serialize('json', Pregunta.objects.all())
 	return HttpResponse(lista, content_type='application/json')
+
+def equipoidealjuegos(request):
+	return render(request, 'juegos/EquipoIdealJuego.html')
