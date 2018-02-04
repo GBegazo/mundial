@@ -56,37 +56,12 @@
 </div>
 <br>
 
-{% if preguntas %}
-{% for pregunta in preguntas %}
-
-{% if pregunta.id == 2 %}
-    <h3>hola</h3>
-
-{% endif %}
-<h2>{{ pregunta.id }}</h2>
-<h2>{{ pregunta.descripcion }}</h2>
-
-  {% for respuesta in pregunta.respuestas.all %}
-  <h2>{{ respuesta.descripcion }}</h2>
-  {% endfor %}
-
-<h2>{{ pregunta.correcta }}</h2>
-
-{% endfor %}
-{% else %}
-
-<h1>No Existen Preguntas</h1>
-
-{% endif %}
-
-
-
  <div class="container-fluid bg-info">
     <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
           <!--Aqui van la preguntas-->
-            <h3 id="pregunta" ><span class="label label-warning" id="qid">1</span> ¿Qué director técnico ha logrado alzarse con la Copa del Mundo en más de una ocasión?</h3>
+            <h3 id="pregunta" ></h3>
         </div>
         <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">
@@ -104,26 +79,19 @@
 
           <div class="quiz" id="quiz" data-toggle="buttons">
             <!--Aqui van las respuestas-->
-           <label id="p1" class="foc element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right">
-            
-           </i></span> <input type="radio"  name="q_answer" value="0">Luiz Felipe Scolari</label>
+           <label id="p1" class="foc element-animation1 btn btn-lg btn-primary btn-block"></label>
 
-           <label id="p2" class="foc element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right">
-            
-           </i></span> <input type="radio"  name="q_answer" value="1">Vittorio Pozzo</label>
+           <label id="p2" class="foc element-animation2 btn btn-lg btn-primary btn-block"></label>
 
-           <label id="p3" class="foc element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right">
-            
-           </i></span> <input type="radio"  name="q_answer" value="2">Marcello Lippi</label>
+           <label id="p3" class="foc element-animation3 btn btn-lg btn-primary btn-block"></label>
 
-           <label id="p4" class="foc element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right">
-           
-           </i></span> <input type="radio" name="q_answer" value="3">Franz Beckenbauer</label>
+           <label id="p4" class="foc element-animation4 btn btn-lg btn-primary btn-block"></label>
 
        </div>
    </div>
    <div class="modal-footer text-muted">
     <span id="answer"></span>
+    <h1>HOla</h1>
 
 </div>
 </div>
@@ -144,8 +112,9 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script src="{% static 'js/triviajuegojs.js' %}" ></script>
-  <script src="{% static 'js/conexion.js' %}" ></script>
+  
+  <script src="{% static 'js/conexion2.js' %}" ></script>
+  <script src="{% static 'js/triviajuegojs2.js' %}" ></script>
 
 
 

@@ -7,12 +7,13 @@ from app.juegosmundial.models import Pregunta,Respuesta
 
 
 def index_juegosmundial(request):
-	return HttpResponse("<h1>Soy la pagina principal de la pagina adopción</h1>")
+	return HttpResponse("<h1>Soy la pagina principal</h1>")
 
 def juegosmundialbien(request):
 	return render(request, 'usuario/bienvenido.html')
+
 def triviadescrip(request):
-	return render(request, 'juegos/DescripTrivia.html')	
+	return render(request, 'juegos/trivia/DescripTrivia.html')	
 
 def equipoidealdescrip(request):
 	return render(request, 'juegos/DescripEquipoIdeal.html')	
@@ -22,17 +23,29 @@ def polladescrip(request):
 
 
 def triviajuegos(request):
-	return render(request, 'juegos/TriviaJuego.html')
+	return render(request, 'juegos/trivia/TriviaJuego.html')
+
+def triviafinal(request):
+	return render(request, 'juegos/trivia/FinJuegoTrivia.html')
 
 def preguntas_list(request):
 	pregunta = Pregunta.objects.all()
 	respuesta = Respuesta.objects.all()
-	contexto = {'preguntas':pregunta, 'respuestas':respuesta}
+	#contexto = {'preguntas':pregunta, 'respuestas':respuesta}
+	contexto = {'respuestas':respuesta}
 	return render(request, 'juegos/TriviaJuego.html', contexto)
 
 def listado(request):
-	lista = serializers.serialize('json', Pregunta.objects.all())
-	return HttpResponse(lista, content_type='application/json')
+	pregunta = Pregunta.objects.all()
+	respuesta = Respuesta.objects.all()
+
+	contexto = {'preguntas':pregunta,'respuestas':respuesta}
+	print(contexto)
+	lista = serializers.serialize('json', pregunta)
+	lista2 = serializers.serialize('json', respuesta)
+	
+	#return HttpResponse('{'+lista+','+lista2+'}', content_type='application/json')
+	return HttpResponse('['+lista+','+lista2+']', content_type='application/json')
 
 def equipoidealjuegos(request):
 	return render(request, 'juegos/EquipoIdealJuego.html')

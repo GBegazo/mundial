@@ -13,5 +13,8 @@ class Pregunta(models.Model):
 	respuestas = models.ManyToManyField(Respuesta)
 	correcta = models.IntegerField()
 
+	#def __str__(self):
+	#	return '{}'.format(self.descripcion)
+
 	def __str__(self):
-		return '{}'.format(self.descripcion)
+		return '{} {} {}'.format(self.descripcion,self.descripcion.join(respuesta.descripcion for respuesta in self.respuestas.all()),self.correcta)
