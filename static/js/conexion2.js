@@ -1,5 +1,5 @@
 
-var serviceURL = "http://"+window.location.hostname+"/juegosmundial/";
+var serviceURL = "https://"+window.location.hostname+"/juegosmundial/";
 //var serviceURL = "http://"+window.location.hostname+":8000/juegosmundial/";
 console.log(serviceURL)
 
