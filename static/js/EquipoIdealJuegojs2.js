@@ -1,90 +1,247 @@
-// Get the modal
-var modal1 = document.getElementById('myModal1');
-// Get the button that opens the modal
-var btn1 = document.getElementById("myBtn1");
-// Get the <span> element that closes the modal
-var span1 = document.getElementsByClassName("close")[0];
-// When the user clicks the button, open the modal
-btn1.onclick = function() {
-    modal1.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span1.onclick = function() {
-    modal1.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal.style.display = "none";
+$(document).ready(function () {
+    $(".formacion").click(function () {
+        var formacion = $(this).html();
+        $("#drop-formaciones").html(
+            formacion +
+            `<span class="caret"></span>`
+        );
+        var pos = formacion.trim().split("-");
+        var def = pos[0];
+        var med = pos[1];
+        var del = pos[2];
+        printArquero();
+        printDefensa(def);
+        printMedio(med);
+        printDelantero(del);
+
+    });
+
+    function printArquero(){
+        $("#arquero").html("");
+        $("#arquero").html(
+        `
+        <div class="col-xs-offset-4 col-xs-4">
+            <div class="center">
+                <span class="badge">1</span>
+            </div>
+            <div class="center">
+                <a href="#">
+                    <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                </a>
+            </div>
+            <div class="center">
+                <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+            </div>
+        </div>
+        `);
     }
-}
 
-var btn2 = document.getElementById("myBtn2");
-var modal2 = document.getElementById('myModal2');
-var span2 = document.getElementsByClassName("close2")[0];
-btn2.onclick = function() {modal2.style.display = "block";}
-span2.onclick = function() {modal2.style.display = "none";}
+    function printDefensa(def) {
+        $("#defensa").html("");
+        var ancho;
+        switch (def) {
+            case "4":
+                ancho = 3;
+                break;
+            case "3":
+                ancho = 4;
+                break;
+            default:
+                ancho = 2;
+        }
+        if (ancho === 3 || ancho === 4) {
+            for (var i = 0; i < def; i++) {
+                $("#defensa").append(
+                    `
+                    <div class="nada col-xs-${ancho}">
+                        <div class="center">
+                            <span class="badge">${(i + 2)}</span>
+                        </div>
+                        <div class="center">
+                            <a href="#">
+                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                            </a>
+                        </div>
+                        <div class="center">
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                        </div>
+                    </div>
+                    `
+                );
+            }
+        } else {
+            printOne(2, "defensa");
+            printThree(3, "defensa");
+            printOne(6, "defensa");
+        }
 
-var btn3 = document.getElementById("myBtn3");
-var modal3 = document.getElementById('myModal3');
-var span3 = document.getElementsByClassName("close3")[0];
-btn3.onclick = function() {modal3.style.display = "block";}
-span3.onclick = function() {modal3.style.display = "none";}
+    }
 
-var btn4 = document.getElementById("myBtn4");
-var modal4 = document.getElementById('myModal4');
-var span4 = document.getElementsByClassName("close4")[0];
-btn4.onclick = function() {modal4.style.display = "block";}
-span4.onclick = function() {modal4.style.display = "none";}
+    function printMedio(med) {
+        $("#medio").html("");
+        var ancho;
+        switch (med) {
+            case "4":
+                ancho = 3;
+                break;
+            case "3":
+                ancho = 4;
+                break;
+            default:
+                ancho = 2;
+        }
+        if (ancho === 3 || ancho === 4) {
+            for (var i = 0; i < med; i++) {
+                $("#medio").append(
+                    `
+                    <div class="nada col-xs-${ancho}">
+                        <div class="center">
+                            <span class="badge">100</span>
+                        </div>
+                        <div class="center">
+                            <a href="#">
+                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                            </a>
+                        </div>
+                        <div class="center">
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                        </div>
+                    </div>
+                    `
+                );
+            }
+        } else {
+            printOne(1, "medio");
+            printThree(1, "medio");
+            printOne(1, "medio");
+        }
+    }
 
-var btn5 = document.getElementById("myBtn5");
-var modal5 = document.getElementById('myModal5');
-var span5 = document.getElementsByClassName("close5")[0];
-btn5.onclick = function() {modal5.style.display = "block";}
-span5.onclick = function() {modal5.style.display = "none";}
+    function printDelantero(del) {
+        $("#delantero").html("");
+        var ancho;
+        switch (del) {
+            case "1":
+                ancho = 12;
+                break;
+            case "2":
+                ancho = 6;
+                break;
+            default:
+                ancho = 4;
+        }
+        for (var i = 0; i < del; i++) {
+            $("#delantero").append(
+                `
+                <div class="nada col-xs-${ancho}">
+                    <div class="center">
+                        <span class="badge">99</span>
+                    </div>
+                    <div class="center">
+                        <a href="#">
+                            <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                        </a>
+                    </div>
+                    <div class="center">
+                        <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                    </div>
+                </div>
+                `
+            );
+        }
+    }
 
-var btn6 = document.getElementById("myBtn6");
-var modal6 = document.getElementById('myModal6');
-var span6 = document.getElementsByClassName("close6")[0];
-btn6.onclick = function() {modal6.style.display = "block";}
-span6.onclick = function() {modal6.style.display = "none";}
-
-var btn7 = document.getElementById("myBtn7");
-var modal7 = document.getElementById('myModal7');
-var span7 = document.getElementsByClassName("close7")[0];
-btn7.onclick = function() {modal7.style.display = "block";}
-span7.onclick = function() {modal7.style.display = "none";}
-
-var btn8 = document.getElementById("myBtn8");
-var modal8 = document.getElementById('myModal8');
-var span8 = document.getElementsByClassName("close8")[0];
-btn8.onclick = function() {modal8.style.display = "block";}
-span8.onclick = function() {modal8.style.display = "none";}
-
-var btn9 = document.getElementById("myBtn9");
-var modal9 = document.getElementById('myModal9');
-var span9 = document.getElementsByClassName("close9")[0];
-btn9.onclick = function() {modal9.style.display = "block";}
-span9.onclick = function() {modal9.style.display = "none";}
-
-var btn10 = document.getElementById("myBtn10");
-var modal10 = document.getElementById('myModal10');
-var span10 = document.getElementsByClassName("close11")[0];
-btn10.onclick = function() {modal10.style.display = "block";}
-span10.onclick = function() {modal10.style.display = "none";}
-
-var btn11 = document.getElementById("myBtn11");
-var modal11 = document.getElementById('myModal11');
-var span11 = document.getElementsByClassName("close11")[0];
-btn11.onclick = function() {modal11.style.display = "block";}
-span11.onclick = function() {modal11.style.display = "none";}
+    function printOne(num, posicion) {
+        $(`#${posicion}`).append(
+            `
+            <div class="col-xs-2 nada row">
+                <div class="col-xs-12">
+                    <div class="center">
+                        <span class="badge">${num}</span>
+                    </div>
+                    <div class="center">
+                        <a href="#">
+                            <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                        </a>
+                    </div>
+                    <div class="center">
+                        <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                    </div>
+                </div>
+            </div>
+            `
+        );
 
 
-function mostrarpaises(){
-	var paises = ["colombia","peru","brazil"]
+    }
 
-		for (var i = 0; i < paises.length; i++) {
-		$(".listpaises").append("<option value='"+i+"'>"+paises[i]+"</option>");
-	
+    function printThree(num, posicion) {
+        $(`#${posicion}`).append(
+            `
+            <div class="col-xs-8 nada row">
+                    <div class="col-xs-4">
+                        <div class="center">
+                            <span class="badge">${num}</span>
+                        </div>
+                        <div class="center">
+                            <a href="#">
+                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                            </a>
+                        </div>
+                        <div class="center">
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="center">
+                            <span class="badge">${(num + 1)}</span>
+                        </div>
+                        <div class="center">
+                            <a href="#">
+                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                            </a>
+                        </div>
+                        <div class="center">
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="center">
+                            <span class="badge">${(num + 2)}</span>
+                        </div>
+                        <div class="center">
+                            <a href="#">
+                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+                            </a>
+                        </div>
+                        <div class="center">
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal" >
+                        </div>
+                    </div>
+                </div>
+            `
+        );
+    }
+
+    //var btn = document.getElementById("myBtn");
+    //var modal3 = document.getElementById('myModal');
+    //var span = document.getElementsByClassName("close")[0];
+    //btn.onclick = function () { modal3.style.display = "block"; }
+    //span.onclick = function () { modal3.style.display = "none"; }
+
+
+    var docsjuga = JSON.parse(localStorage.getItem("jugadores"));
+
+    var paises = ["colombia","peru","brazil"]
+	var cad = ""
+
+	for (var i = Things.length - 1; i >= 0; i--) {
+		Things[i]
 	}
-}
+
+	for (var i = 0; i < paises.length; i++) {
+		cad = cad + "<option value='"+i+"'>"+paises[i]+"</option>";
+	}
+	$("#sel1").html(cad);
+
+});

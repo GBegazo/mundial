@@ -70,12 +70,7 @@ function getTiposList() {
 
 //Agregando Listado de Jugadores
 function getjugadores() {
-    var docs = [""];
-    var respp = ["pruebita","pruebita2"]; 
-    var resppppp = 1;   
-
-    var aux111 = ""
-    console.log("estamos dentro")
+    var docsjuga = [""];  
     $.ajax({
         url: serviceURL + 'equipoidealjugadores',
         async: false,
@@ -86,26 +81,21 @@ function getjugadores() {
         for (var i = 0; i < data.length; i++) {
 
             console.log(data[i])
+
+            docsjuga.push({
+                nombre : data[i].fields.nombre,
+                pais : data[i].fields.pais, 
+                dorsal : data[i].fields.dorsal,
+                puntaje : data[i].fields.puntaje
+            });
           
-
-            
-
-         /*   docs.push({
-                //quest : auxpreguntas[i].fields.descripcion,
-                //ans : arrayrespuestas, 
-               //res : auxpreguntas[i].fields.correcta 
-             });
-             */
         }
         
 
     }});   
 
 
-    console.log(docs)
-
-
-    //localStorage.setItem("probemos", JSON.stringify(docs));   
+    localStorage.setItem("jugadores", JSON.stringify(docsjuga));   
   
 }
 

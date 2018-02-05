@@ -2,475 +2,182 @@
 {% load staticfiles %}
 {% block link%} 
 
-<link rel="stylesheet" href="{% static 'css/EquipoIdealJuegocss.css' %}">
+<link rel="stylesheet" href="{% static 'css/EquipoIdealJuego.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  {%endblock %}
 
 
 {% block content %}
   {% csrf_token %}
+
 <div style="padding:15px;text-align:center;">
-  <h1 style="font-family:fantasy;color:#FFFFFF;">Equipo Ideal Rusia 2018</h1>
-</div>
+        <h1 style="font-family:fantasy;color:#FFFFFF;">Equipo Ideal Rusia 2018</h1>
+    </div>
 
-<div style="overflow:auto">
-  <div class="menu">
-    <div class="menuitem">
-      <table>
-          <tr>
-            <th>
-              <div class="dropdown">
-                <button id="botones"class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Elegir táctica
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a id="tacticas" href="#" >4-4-2</a></li>
-                  <li><a id="tacticas" href="#">4-4-3</a></li>
-                  <li><a id="tacticas" href="#">3-4-3</a></li>
-                  <li><a id="tacticas" href="#">4-5-1</a></li>
-                  <li><a id="tacticas" href="#">5-4-1</a></li>
-                </ul>
-              </div>
-            </th>
-          </tr>
-          <tr><td><br></br></td></tr>
-          <tr>
-            <td>
-              <div>
-                <label style="font-family:fantasy; color:#4169E1; background-color:#FFFFFF; font-size:25px;"for="ptotal">Puntaje total del equipo:</label>
-                <input disabled type="text" id="ptotal" name="ptotal" value="">
-              </div>
-            </td>
-          </tr>
-          <tr><td><br></br></td></tr>
-          <tr>
-            <td>
-              <div>
-                <button id="botones" class="btn btn-primary dropdown-toggle" type="button" onclick="">Guardar</button>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-  </div>
+    <div class="row">
+        <div class="menu col-xs-3">
+            <div class="menuitem">
+                <table>
+                    <tr>
+                        <th>
+                            <!-- elegir tactica -->
+                            <div class="dropdown">
+                                <button id="drop-formaciones" class="btn btn-primary dropdown-toggle botones" type="button" data-toggle="dropdown">Elegir táctica
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a id="tacticas" class="formacion" style="cursor:pointer">4-4-2</a>
+                                    </li>
+                                    <li>
+                                        <a id="tacticas" class="formacion" style="cursor:pointer">4-3-3</a>
+                                    </li>
+                                    <li>
+                                        <a id="tacticas" class="formacion" style="cursor:pointer">3-4-3</a>
+                                    </li>
+                                    <li>
+                                        <a id="tacticas" class="formacion" style="cursor:pointer">4-5-1</a>
+                                    </li>
+                                    <li>
+                                        <a id="tacticas" class="formacion" style="cursor:pointer">5-4-1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br></br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <label style="font-family:fantasy; color:#4169E1; background-color:#FFFFFF; font-size:25px;" for="ptotal">Puntaje total del equipo:</label>
+                                <input disabled type="text" id="ptotal" name="ptotal" value="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br></br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <button id="myBtn" class="btn btn-primary dropdown-toggle botones" type="button" onclick="">Guardar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="main col-xs-6 nada">
+            <div id="equipoideal3d">
+                <div id="arquero" class="arquero row nada"></div>
+                <div id="defensa" class="defensa row nada"></div>
+                <div id="medio" class="medio"></div>
+                <div id="delantero" class="delantero"></div>
+            </div>
+        </div>
+        <div class="right col-xs-3">
+            <h2 style="font-family:fantasy;color:#FFFFFF;">Ranking</h2>
+            <p>
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                        <li class="list-group-item">...
+                            <span class="badge">0</span>
+                        </li>
+                    </ul>
+                </div>
+            </p>
 
-  <div class="main">
-    <div id="blockporra">
-      <div class="contentporra">
-        <div class="columnporra">
-          <div id="equipoideal3d">
-            <ul>
+        </div>
+    </div>
 
 
-              <li id="dreamteam1" class="j1">
-                <a href="javascript:void(0);" onclick="addplayermyteam(1);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid1" class="nom">
-                  <button id="myBtn1">Añadir jugador</button>
-                </span><div id="myModal1" class="modal">
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">1</span>
-              </li>
-              <li id="dreamteam2" class="j2">
-                  <a href="javascript:void(0);" >
-                    <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                  </a>
-                  <span id="nomid2" class="nom">
-                    <button id="myBtn2" >Añadir jugador</button>
-                  </span>
-                  <div id="myModal2" class="modal">
-                    <div class="modal-content">
-                      <span class="close2">&times;</span>
-                      <div class="menu">
-                        <div class="menuitem">
-                          <table>
-                            <tr>
-                              <th>
-                                <select id="botones" class="listpaises" name="Select1" size="1" onclick="mostrarpaises()">
-                                  <option value="">- Seleccione un paísssss -</option>
-
-
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">2</span>
-              </li>
-              <li id="dreamteam3" class="j3">
-                <a href="javascript:void(0);" onclick="addplayermyteam(3);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a><span id="nomid3" class="nom">
-                  <button id="myBtn3">Añadir jugador</button>
-                </span><div id="myModal3" class="modal">
-                  <div class="modal-content">
-                    <span class="close3">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">3</span>
-              </li>
-              <li id="dreamteam4" class="j4">
-                <a href="javascript:void(0);" onclick="addplayermyteam(4);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid4" class="nom">
-                  <button id="myBtn4" >Añadir jugador</button>
-                </span>
-                <div id="myModal4" class="modal">
-                  <div class="modal-content">
-                    <span class="close4">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="kkk">- Seleccione un país -</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">4</span>
-              </li>
-              <li id="dreamteam5" class="j5">
-                <a href="javascript:void(0);" onclick="addplayermyteam(5);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid5" class="nom">
-                  <button id="myBtn5">Añadir jugador</button>
-                </span>
-                <div id="myModal5" class="modal">
-                  <div class="modal-content">
-                    <span class="close5">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">5</span>
-              </li>
-              <li id="dreamteam6" class="j6">
-                <a href="javascript:void(0);" onclick="addplayermyteam(6);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid6" class="nom">
-                  <button id="myBtn6">Añadir jugador</button>
-                </span>
-                <div id="myModal6" class="modal">
-                  <div class="modal-content">
-                    <span class="close6">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">6</span>
-              </li>
-              <li id="dreamteam7" class="j7">
-                <a href="javascript:void(0);" onclick="addplayermyteam(7);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid7" class="nom">
-                  <button id="myBtn7">Añadir jugador</button>
-                </span>
-                <div id="myModal7" class="modal">
-                  <div class="modal-content">
-                    <span class="close7">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">7</span>
-              </li>
-              <li id="dreamteam8" class="j8">
-                <a href="javascript:void(0);" onclick="addplayermyteam(8);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid8" class="nom">
-                  <button id="myBtn8">Añadir jugador</button>
-                </span>
-                <div id="myModal8" class="modal">
-                  <div class="modal-content">
-                    <span class="close8">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">8</span>
-              </li>
-              <li id="dreamteam9" class="j9">
-                <a href="javascript:void(0);" onclick="addplayermyteam(9);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg"></a>
-                  <span id="nomid9" class="nom">
-                    <button id="myBtn9">Añadir jugador</button>
-                  </span>
-                  <div id="myModal9" class="modal">
-                    <div class="modal-content">
-                      <span class="close9">&times;</span>
-                      <div class="menu">
-                        <div class="menuitem">
-                          <table>
-                              <tr>
-                                <th>
-                                  <select id="botones" name="Select1" size="1">
-                                    <option value="">- Seleccione un país -</option>
-                                    <option value"peru">Perú</option>
-                                  </select>
-                                </th>
-                                <th>
-                                  <select id="botones" name="Select2" size="1">
-                                    <option value="">- Seleccione un jugador -</option>
-                                    <option value"pg">Paolo Guerrero</option>
-                                  </select>
-                                </th>
-                              </tr>
-                            </table>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <span class="num">9</span>
-                </li>
-              <li id="dreamteam10" class="j10">
-                <a href="javascript:void(0);" onclick="addplayermyteam(10);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid10" class="nom">
-                  <button id="myBtn10">Añadir jugador</button>
-                </span>
-                <div id="myModal10" class="modal">
-                  <div class="modal-content">
-                    <span class="close10">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">10</span>
-              </li>
-              <li id="dreamteam11" class="j11">
-                <a href="javascript:void(0);" onclick="addplayermyteam(11);">
-                  <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
-                <span id="nomid11" class="nom">
-                  <button id="myBtn11">Añadir jugador</button>
-                </span>
-                <div id="myModal11" class="modal">
-                  <div class="modal-content">
-                    <span class="close11">&times;</span>
-                    <div class="menu">
-                      <div class="menuitem">
-                        <table>
-                            <tr>
-                              <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select id="botones" name="Select2" size="1">
-                                  <option value="">- Seleccione un jugador -</option>
-                                  <option value"pg">Paolo Guerrero</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </table>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="num">11</span>
-              </li>
-            </ul>
-          </div>
+<!-- Trigger the modal with a button 
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+-->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Seleccionar Jugador</h4>
+        </div>
+        <div class="modal-body">
+        
+        
+    <div class="form-group">
+      <label for="sel1">Pais:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    
+        <div class="form-group">
+      <label for="sel1">Jugador:</label>
+      <select class="form-control" id="sel2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+           
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
+      
     </div>
   </div>
-
-  <div class="right">
-    <h2 style="font-family:fantasy;color:#FFFFFF;">Ranking</h2>
-    <p>
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-          <li class="list-group-item">... <span class="badge">0</span></li>
-        </ul>
-    </div>
-  </p>
-
-  </div>
-</div>
-
-
-
-
+  
  
   {% endblock %}
   {% block script%}
 
 <script src="{% static 'js/EquipoIdealJuegojs2.js' %}" ></script>
-
-
-
 
   {%endblock %}
   

@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load staticfiles %}
 {% block link%} 
 
 
@@ -92,5 +93,8 @@
  
  
   {% endblock %}
-  {% block script%}  
- {%endblock %}
+  {% block script%}
+  
+  <script src="{% static 'js/conexion.js' %}" ></script>
+
+  {%endblock %}
