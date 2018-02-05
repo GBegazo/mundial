@@ -58,17 +58,7 @@
         <div class="columnporra">
           <div id="equipoideal3d">
             <ul>
-              <input type="hidden" name="demsave1" id="demsave1" value="0">
-              <input type="hidden" name="demsave2" id="demsave2" value="0">
-              <input type="hidden" name="demsave3" id="demsave3" value="0">
-              <input type="hidden" name="demsave4" id="demsave4" value="0">
-              <input type="hidden" name="demsave5" id="demsave5" value="0">
-              <input type="hidden" name="demsave6" id="demsave6" value="0">
-              <input type="hidden" name="demsave7" id="demsave7" value="0">
-              <input type="hidden" name="demsave8" id="demsave8" value="0">
-              <input type="hidden" name="demsave9" id="demsave9" value="0">
-              <input type="hidden" name="demsave10" id="demsave10" value="0">
-              <input type="hidden" name="demsave11" id="demsave11" value="0">
+
 
               <li id="dreamteam1" class="j1">
                 <a href="javascript:void(0);" onclick="addplayermyteam(1);">
@@ -104,11 +94,11 @@
                 <span class="num">1</span>
               </li>
               <li id="dreamteam2" class="j2">
-                  <a href="javascript:void(0);" onclick="addplayermyteam(2);">
+                  <a href="javascript:void(0);" >
                     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                   </a>
                   <span id="nomid2" class="nom">
-                    <button id="myBtn2">Añadir jugador</button>
+                    <button id="myBtn2" >Añadir jugador</button>
                   </span>
                   <div id="myModal2" class="modal">
                     <div class="modal-content">
@@ -118,9 +108,10 @@
                           <table>
                             <tr>
                               <th>
-                                <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
+                                <select id="botones" class="listpaises" name="Select1" size="1" onclick="mostrarpaises()">
+                                  <option value="">- Seleccione un paísssss -</option>
+
+
                                 </select>
                               </th>
                               <th>
@@ -174,7 +165,7 @@
                   <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                 </a>
                 <span id="nomid4" class="nom">
-                  <button id="myBtn4">Añadir jugador</button>
+                  <button id="myBtn4" >Añadir jugador</button>
                 </span>
                 <div id="myModal4" class="modal">
                   <div class="modal-content">
@@ -185,8 +176,7 @@
                             <tr>
                               <th>
                                 <select id="botones" name="Select1" size="1">
-                                  <option value="">- Seleccione un país -</option>
-                                  <option value"peru">Perú</option>
+                                  <option value="kkk">- Seleccione un país -</option>
                                 </select>
                               </th>
                               <th>
@@ -477,7 +467,7 @@
   {% endblock %}
   {% block script%}
 
-<script src="{% static 'js/EquipoIdealJuegojs.js' %}" ></script>
+<script src="{% static 'js/EquipoIdealJuegojs2.js' %}" ></script>
 
 
 

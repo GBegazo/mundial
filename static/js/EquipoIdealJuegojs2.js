@@ -78,3 +78,13 @@ var modal11 = document.getElementById('myModal11');
 var span11 = document.getElementsByClassName("close11")[0];
 btn11.onclick = function() {modal11.style.display = "block";}
 span11.onclick = function() {modal11.style.display = "none";}
+
+
+function mostrarpaises(){
+	var paises = ["colombia","peru","brazil"]
+
+		for (var i = 0; i < paises.length; i++) {
+		$(".listpaises").append("<option value='"+i+"'>"+paises[i]+"</option>");
+	
+	}
+}
