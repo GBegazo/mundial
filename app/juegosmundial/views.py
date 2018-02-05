@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
 
-from app.juegosmundial.models import Pregunta,Respuesta
+from app.juegosmundial.models import Pregunta,Respuesta,Jugadores
 # Create your views here.
 
 
@@ -46,6 +46,20 @@ def listado(request):
 	
 	#return HttpResponse('{'+lista+','+lista2+'}', content_type='application/json')
 	return HttpResponse('['+lista+','+lista2+']', content_type='application/json')
+
+	#Agregando listadoJugadores
+
+def listadojugadores(request):
+	jugadores = Jugadores.objects.all()
+	
+
+	#contexto = {'jugadores':jugadores}
+	#print(contexto)
+	listajugadores = serializers.serialize('json', jugadores)
+	
+	
+	#return HttpResponse('{'+lista+','+lista2+'}', content_type='application/json')
+	return HttpResponse(listajugadores, content_type='application/json')	
 
 def equipoidealjuegos(request):
 	return render(request, 'juegos/EquipoIdealJuego.html')

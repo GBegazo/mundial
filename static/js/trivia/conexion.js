@@ -1,9 +1,10 @@
 
-var serviceURL = "https://"+window.location.hostname+"/juegosmundial/";
-//var serviceURL = "http://"+window.location.hostname+":8000/juegosmundial/";
+//var serviceURL = "https://"+window.location.hostname+"/juegosmundial/";
+var serviceURL = "http://"+window.location.hostname+":8000/juegosmundial/";
 console.log(serviceURL)
 
 getTiposList();
+getjugadores();
 
 $(document).ajaxError(function(event, request, settings) {
     console.log("conexion Ajax");
@@ -63,9 +64,55 @@ function getTiposList() {
     console.log(docs)
 
 
-    localStorage.setItem("probemos", JSON.stringify(docs));
-    
+    localStorage.setItem("probemos", JSON.stringify(docs));   
   
 }
+
+//Agregando Listado de Jugadores
+function getjugadores() {
+    var docs = [""];
+    var respp = ["pruebita","pruebita2"]; 
+    var resppppp = 1;   
+
+    var aux111 = ""
+    console.log("estamos dentro")
+    $.ajax({
+        url: serviceURL + 'equipoidealjugadores',
+        async: false,
+        success: function(data) {
+
+        
+
+        for (var i = 0; i < data.length; i++) {
+
+            console.log(data[i])
+          
+
+            
+
+         /*   docs.push({
+                //quest : auxpreguntas[i].fields.descripcion,
+                //ans : arrayrespuestas, 
+               //res : auxpreguntas[i].fields.correcta 
+             });
+             */
+        }
+        
+
+    }});   
+
+
+    console.log(docs)
+
+
+    //localStorage.setItem("probemos", JSON.stringify(docs));   
+  
+}
+
+
+
+
+
+
 
 
