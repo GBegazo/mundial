@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from app.juegosmundial.models import Respuesta, Pregunta
+from app.juegosmundial.models import Respuesta, Pregunta, Jugadores
 # Register your models here.
 
 admin.site.register(Respuesta)
