@@ -5,3 +5,4 @@ from app.juegosmundial.models import Respuesta, Pregunta
 
 admin.site.register(Respuesta)
 admin.site.register(Pregunta)
+admin.site.register(Jugadores)
