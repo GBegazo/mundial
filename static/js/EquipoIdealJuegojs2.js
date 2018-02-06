@@ -1,7 +1,15 @@
 $(document).ready(function () {
 
 
+  	var cont1;
+  	var cont2;
+  	var cont3;
+  	var cont4;
     $(".formacion").click(function () {
+    	cont1 = 0;
+    	cont2 = 0;
+    	cont3 = 0;
+    	cont4 = 0;
         var formacion = $(this).html();
         $("#drop-formaciones").html(
             formacion +
@@ -22,17 +30,17 @@ $(document).ready(function () {
         $("#arquero").html("");
         $("#arquero").html(
         `
-        <div id="jugador1" class="col-xs-offset-4 col-xs-4">
+        <div id="jugador`+(++cont1)+`" class="col-xs-offset-4 col-xs-4">
             <div class="center">
-                <span class="badge">1</span>
+                <span class="badge">0</span>
             </div>
             <div class="center">
                 <a href="#">
                     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                 </a>
             </div>
-            <div class="center">
-                <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal1" data-id="1">
+            <div class="center"> `+(++cont2)+`
+                <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
             </div>
         </div>
         `);
@@ -55,17 +63,17 @@ $(document).ready(function () {
             for (var i = 0; i < def; i++) {
                 $("#defensa").append(
                     `
-                    <div id="jugador`+(i+2)+`" class="nada col-xs-${ancho}">
+                    <div id="jugador`+(++cont1)+`" class="nada col-xs-${ancho}">
                         <div class="center">
-                            <span class="badge">${(i + 2)}</span>
+                            <span class="badge">0</span>
                         </div>
                         <div class="center">
                             <a href="#">
                                 <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                             </a>
-                        </div> data-id="`+(i+2)+`"
+                        </div> `+(++cont2)+`
                         <div class="center">
-                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(i+2)+`" data-id="`+(i+2)+`">
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
                     `
@@ -96,17 +104,17 @@ $(document).ready(function () {
             for (var i = 0; i < med; i++) {
                 $("#medio").append(
                     `
-                    <div id="jugador`+(i+6)+`" class="nada col-xs-${ancho}">
+                    <div id="jugador`+(++cont1)+`" class="nada col-xs-${ancho}">
                         <div class="center">
-                            <span class="badge">100</span>
+                            <span class="badge">0</span>
                         </div>
                         <div class="center">
                             <a href="#">
                                 <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                             </a>
-                        </div> data-id="`+(i+6)+`"
+                        </div> `+(++cont2)+`
                         <div class="center">
-                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(i+6)+`" data-id="`+(i+6)+`">
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
                     `
@@ -135,17 +143,17 @@ $(document).ready(function () {
         for (var i = 0; i < del; i++) {
             $("#delantero").append(
                 `
-                <div id="jugador`+(i+10)+`" class="nada col-xs-${ancho}">
+                <div id="jugador`+(++cont1)+`" class="nada col-xs-${ancho}">
                     <div class="center">
-                        <span class="badge">99</span>
+                        <span class="badge">0</span>
                     </div>
                     <div class="center">
                         <a href="#">
                             <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                         </a>
-                    </div> data-id="`+(i+10)+`"
-                    <div class="center">
-                        <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(i+10)+`" data-id="`+(i+10)+`">
+                    </div> `+(++cont2)+`
+                    <div class="center"> 
+                        <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                     </div>
                 </div>
                 `
@@ -157,17 +165,17 @@ $(document).ready(function () {
         $(`#${posicion}`).append(
             `
             <div class="col-xs-2 nada row">
-                <div class="col-xs-12">
+                <div id="jugador`+(++cont1)+`" class="col-xs-12">
                     <div class="center">
-                        <span class="badge">${num}</span>
+                        <span class="badge">0</span>
                     </div>
                     <div class="center">
                         <a href="#">
                             <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                         </a>
                     </div>
-                    <div class="center">
-                        <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                    <div class="center" > `+(++cont2)+`
+                        <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                     </div>
                 </div>
             </div>
@@ -181,43 +189,43 @@ $(document).ready(function () {
         $(`#${posicion}`).append(
             `
             <div class="col-xs-8 nada row">
-                    <div class="col-xs-4">
+                    <div id="jugador`+(++cont1)+`" class="col-xs-4">
                         <div class="center">
-                            <span class="badge">${num}</span>
+                            <span class="badge">0</span>
                         </div>
                         <div class="center">
                             <a href="#">
                                 <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                             </a>
                         </div>
-                        <div class="center">
-                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                        <div class="center"> `+(++cont2)+`
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
-                    <div class="col-xs-4">
+                    <div id="jugador`+(++cont1)+`" class="col-xs-4">
                         <div class="center">
-                            <span class="badge">${(num + 1)}</span>
+                            <span class="badge">0</span>
                         </div>
                         <div class="center">
                             <a href="#">
                                 <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                             </a>
                         </div>
-                        <div class="center">
-                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal">
+                        <div class="center"> `+(++cont2)+`
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
-                    <div class="col-xs-4">
+                    <div id="jugador`+(++cont1)+`" class="col-xs-4">
                         <div class="center">
-                            <span class="badge">${(num + 2)}</span>
+                            <span class="badge">0</span>
                         </div>
                         <div class="center">
                             <a href="#">
                                 <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                             </a>
                         </div>
-                        <div class="center">
-                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal" >
+                        <div class="center"> `+(++cont2)+`
+                            <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
                 </div>
@@ -260,7 +268,7 @@ $("#myModal1").on('show.bs.modal', function (e) {
     var indexjugador = $(e.relatedTarget).attr('data-id');
     var indexfijo = parseInt(indexjugador);
     console.log("imprimir index "+indexjugador)
-    $(this).find('.roomNumber').text(indexjugador);
+    $(this).find('.roomNumber').html(indexjugador);
 
 	var x ="";
 	var dorsal;
@@ -908,7 +916,7 @@ $("#myModal11").on('show.bs.modal', function (e) {
     var indexjugador = $(e.relatedTarget).attr('data-id');
     var indexfijo = parseInt(indexjugador);
     console.log("imprimir index "+indexjugador)
-    $(this).find('.roomNumber').text(indexjugador);
+    $(this).find('.roomNumber').html(indexjugador);
 
 	var x ="";
 	var dorsal;
