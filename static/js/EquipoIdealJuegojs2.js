@@ -5,11 +5,13 @@ $(document).ready(function () {
   	var cont2;
   	var cont3;
   	var cont4;
+  	var cont5;
     $(".formacion").click(function () {
     	cont1 = 0;
     	cont2 = 0;
     	cont3 = 0;
     	cont4 = 0;
+    	cont5 = 0;
         var formacion = $(this).html();
         $("#drop-formaciones").html(
             formacion +
@@ -35,9 +37,9 @@ $(document).ready(function () {
                 <span class="badge">0</span>
             </div>
             <div class="center">
-                <a href="#">
+                <div id="`+(++cont5)+`banderapais">
                     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                </a>
+                </div>
             </div>
             <div class="center"> `+(++cont2)+`
                 <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -68,9 +70,9 @@ $(document).ready(function () {
                             <span class="badge">0</span>
                         </div>
                         <div class="center">
-                            <a href="#">
-                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                            </a>
+               				 <div id="`+(++cont5)+`banderapais">
+               				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+              				  </div>
                         </div> `+(++cont2)+`
                         <div class="center">
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -109,9 +111,9 @@ $(document).ready(function () {
                             <span class="badge">0</span>
                         </div>
                         <div class="center">
-                            <a href="#">
-                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                            </a>
+                            <div id="`+(++cont5)+`banderapais">
+               				    <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+              				 </div>
                         </div> `+(++cont2)+`
                         <div class="center">
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -148,9 +150,9 @@ $(document).ready(function () {
                         <span class="badge">0</span>
                     </div>
                     <div class="center">
-                        <a href="#">
-                            <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                        </a>
+                        <div id="`+(++cont5)+`banderapais">
+               			     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+              		   </div>
                     </div> `+(++cont2)+`
                     <div class="center"> 
                         <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -170,9 +172,9 @@ $(document).ready(function () {
                         <span class="badge">0</span>
                     </div>
                     <div class="center">
-                        <a href="#">
-                            <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                        </a>
+                        <div id="`+(++cont5)+`banderapais">
+               			     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+              			 </div>
                     </div>
                     <div class="center" > `+(++cont2)+`
                         <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -194,9 +196,9 @@ $(document).ready(function () {
                             <span class="badge">0</span>
                         </div>
                         <div class="center">
-                            <a href="#">
-                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                            </a>
+                            <div id="`+(++cont5)+`banderapais">
+               				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+              				  </div>
                         </div>
                         <div class="center"> `+(++cont2)+`
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -207,9 +209,9 @@ $(document).ready(function () {
                             <span class="badge">0</span>
                         </div>
                         <div class="center">
-                            <a href="#">
-                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                            </a>
+                            <div id="`+(++cont5)+`banderapais">
+               				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+              				  </div>
                         </div>
                         <div class="center"> `+(++cont2)+`
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -220,9 +222,9 @@ $(document).ready(function () {
                             <span class="badge">0</span>
                         </div>
                         <div class="center">
-                            <a href="#">
-                                <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
-                            </a>
+                            <div id="`+(++cont5)+`banderapais">
+               				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
+              				  </div>
                         </div>
                         <div class="center"> `+(++cont2)+`
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
@@ -272,6 +274,7 @@ $("#myModal1").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#1sel1" ).click(function() {
@@ -314,12 +317,17 @@ $("#myModal1").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
-					 console.log(indexfijo)
+					 console.log(indexfijo)					 	 
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal1').modal('hide');       				 
    				 });
 
 
@@ -335,6 +343,7 @@ $("#myModal2").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#2sel1" ).click(function() {
@@ -377,12 +386,18 @@ $("#myModal2").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal2').modal('hide');
    				 });
 
 
@@ -398,6 +413,7 @@ $("#myModal3").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#3sel1" ).click(function() {
@@ -440,12 +456,18 @@ $("#myModal3").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal3').modal('hide');
    				 });
 
 
@@ -464,6 +486,7 @@ $("#myModal4").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#4sel1" ).click(function() {
@@ -506,12 +529,18 @@ $("#myModal4").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal4').modal('hide');
    				 });
 
 
@@ -530,6 +559,7 @@ $("#myModal5").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#5sel1" ).click(function() {
@@ -572,12 +602,18 @@ $("#myModal5").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal5').modal('hide');
    				 });
 
 
@@ -595,6 +631,7 @@ $("#myModal6").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#6sel1" ).click(function() {
@@ -637,12 +674,18 @@ $("#myModal6").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal6').modal('hide');
    				 });
 
 
@@ -660,6 +703,7 @@ $("#myModal7").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#7sel1" ).click(function() {
@@ -702,12 +746,18 @@ $("#myModal7").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal7').modal('hide');
    				 });
 
 
@@ -725,6 +775,7 @@ $("#myModal8").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#8sel1" ).click(function() {
@@ -767,12 +818,18 @@ $("#myModal8").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal8').modal('hide');
    				 });
 
 
@@ -790,6 +847,7 @@ $("#myModal9").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#9sel1" ).click(function() {
@@ -832,12 +890,18 @@ $("#myModal9").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal9').modal('hide');
    				 });
 
 
@@ -855,6 +919,7 @@ $("#myModal10").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#10sel1" ).click(function() {
@@ -897,12 +962,18 @@ $("#myModal10").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal10').modal('hide');
    				 });
 
 
@@ -920,6 +991,7 @@ $("#myModal11").on('show.bs.modal', function (e) {
 
 	var x ="";
 	var dorsal;
+	var banderita;
 	var w ="";
 
 	$( "#11sel1" ).click(function() {
@@ -962,12 +1034,18 @@ $("#myModal11").on('show.bs.modal', function (e) {
        				for (var o = 0; o < docsjuga.length; o++) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
+							banderita = docsjuga[o].pais;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
 					 console.log(indexfijo)
+					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
+					 
+       				 $('#'+indexfijo+'banderapais').html(cadbanderas)
+       				 
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#myModal11').modal('hide');
    				 });
 
 
