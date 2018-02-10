@@ -5,12 +5,6 @@
 <link rel="stylesheet" href="{% static 'css/EquipoIdealJuego.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<style type="text/css">
-  
-  input {
-    width: 20%;
-  }
-</style>
  {%endblock %}
 
 
@@ -22,7 +16,7 @@
     </div>
 
     <div class="row">
-        <div class="menu col-xs-3">
+        <div class="menu col-xs-4">
             <div class="menuitem">
                 <table>
                     <tr>
@@ -61,7 +55,7 @@
                         <td>
                             <div>
                                 <label style="font-family:fantasy; color:#4169E1; background-color:#FFFFFF; font-size:25px;" for="ptotal">Puntaje total del equipo:</label>
-                                <input disabled type="text" id="ptotal" name="ptotal" value="">
+                                <input disabled type="text" id="puntajetotal" name="ptotal" value="">
                             </div>
                         </td>
                     </tr>
@@ -80,8 +74,9 @@
                 </table>
             </div>
         </div>
-        <div class="main col-xs-6 nada">
+        <div class="main col-xs-8 nada">
             <div id="equipoideal3d">
+             <!-- <img src="{% static 'css/campofutbol.jpg' %}" alt="Mountain View">-->
                 <div id="arquero" class="arquero row nada"></div>
                 <div id="defensa" class="defensa row nada"></div>
                 <div id="medio" class="medio"></div>
@@ -571,7 +566,7 @@
   {% endblock %}
   {% block script%}
 
-<script src="{% static 'js/EquipoIdealJuegojs2.js' %}" ></script>
+<script src="{% static 'js/EquipoIdealJuegojs.js' %}" ></script>
 
   {%endblock %}
   

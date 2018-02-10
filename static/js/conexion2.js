@@ -13,10 +13,7 @@ $(document).ajaxError(function(event, request, settings) {
 
 function getTiposList() {
     var docs = [""];
-    var respp = ["pruebita","pruebita2"]; 
-    var resppppp = 1;   
 
-    var aux111 = ""
     console.log("estamos dentro")
     $.ajax({
         url: serviceURL + 'listado',
@@ -77,7 +74,6 @@ function getjugadores() {
         success: function(data) {
 
         
-
         for (var i = 0; i < data.length; i++) {
 
             console.log(data[i])

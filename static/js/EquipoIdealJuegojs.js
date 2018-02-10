@@ -41,7 +41,7 @@ $(document).ready(function () {
                     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
                 </div>
             </div>
-            <div class="center"> `+(++cont2)+`
+            <div class="center">
                 <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
             </div>
         </div>
@@ -73,7 +73,7 @@ $(document).ready(function () {
                				 <div id="`+(++cont5)+`banderapais">
                				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
               				  </div>
-                        </div> `+(++cont2)+`
+                        </div>
                         <div class="center">
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
@@ -114,7 +114,7 @@ $(document).ready(function () {
                             <div id="`+(++cont5)+`banderapais">
                				    <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
               				 </div>
-                        </div> `+(++cont2)+`
+                        </div> 
                         <div class="center">
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
@@ -153,7 +153,7 @@ $(document).ready(function () {
                         <div id="`+(++cont5)+`banderapais">
                			     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
               		   </div>
-                    </div> `+(++cont2)+`
+                    </div> 
                     <div class="center"> 
                         <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                     </div>
@@ -176,7 +176,7 @@ $(document).ready(function () {
                			     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
               			 </div>
                     </div>
-                    <div class="center" > `+(++cont2)+`
+                    <div class="center" > 
                         <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                     </div>
                 </div>
@@ -200,7 +200,7 @@ $(document).ready(function () {
                				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
               				  </div>
                         </div>
-                        <div class="center"> `+(++cont2)+`
+                        <div class="center"> 
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
@@ -213,7 +213,7 @@ $(document).ready(function () {
                				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
               				  </div>
                         </div>
-                        <div class="center"> `+(++cont2)+`
+                        <div class="center">
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
@@ -226,7 +226,7 @@ $(document).ready(function () {
                				     <img width="44" height="44" alt="Añadir jugador" src="https://thumb.resfu.com/media/img/avatar-mini-player.jpg">
               				  </div>
                         </div>
-                        <div class="center"> `+(++cont2)+`
+                        <div class="center">
                             <input class="center input-cancha" style="cursor:pointer" type="text" placeholder="Ingresar jugador" data-toggle="modal" data-target="#myModal`+(++cont3)+`" data-id="`+(++cont4)+`">
                         </div>
                     </div>
@@ -235,6 +235,8 @@ $(document).ready(function () {
         );
     }
 
+
+    var puntajetotal = 0;
 /////////////// Opciones Paises Jugadores
     var docsjuga = JSON.parse(localStorage.getItem("jugadores"));
 
@@ -265,6 +267,15 @@ $(document).ready(function () {
 	$("#10sel1").html(cad);
 	$("#11sel1").html(cad);
 
+function calcularpuntaje() {
+
+	var auxpunt = 0;
+	for (var f = 1; f <= 11; f++) {
+		auxpunt = auxpunt + parseInt($('#jugador'+f+' div span').text())
+	}
+	
+    return auxpunt;
+}
 
 $("#myModal1").on('show.bs.modal', function (e) {
     var indexjugador = $(e.relatedTarget).attr('data-id');
@@ -275,6 +286,7 @@ $("#myModal1").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#1sel1" ).click(function() {
@@ -318,6 +330,7 @@ $("#myModal1").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -325,9 +338,11 @@ $("#myModal1").on('show.bs.modal', function (e) {
 					 var cadbanderas = '<img width="60" height="44" src="/static/img/banderas/'+banderita+'.png" alt="'+banderita+'">'
 					 
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
-       				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
-       				 $('#myModal1').modal('hide');       				 
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
+       				 $('#myModal1').modal('hide');  
+       				    	
+       				 $('#puntajetotal').val(calcularpuntaje())			 
    				 });
 
 
@@ -344,6 +359,7 @@ $("#myModal2").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#2sel1" ).click(function() {
@@ -387,6 +403,7 @@ $("#myModal2").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -396,8 +413,10 @@ $("#myModal2").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
-       				 $('#myModal2').modal('hide');
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
+       				 $('#myModal2').modal('hide');   	
+       				 $('#puntajetotal').val(calcularpuntaje())
    				 });
 
 
@@ -414,6 +433,7 @@ $("#myModal3").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#3sel1" ).click(function() {
@@ -457,6 +477,7 @@ $("#myModal3").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -466,8 +487,10 @@ $("#myModal3").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal3').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -487,6 +510,7 @@ $("#myModal4").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#4sel1" ).click(function() {
@@ -530,6 +554,7 @@ $("#myModal4").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -539,8 +564,10 @@ $("#myModal4").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal4').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -560,6 +587,7 @@ $("#myModal5").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#5sel1" ).click(function() {
@@ -603,6 +631,7 @@ $("#myModal5").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -612,8 +641,10 @@ $("#myModal5").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal5').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -632,6 +663,7 @@ $("#myModal6").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#6sel1" ).click(function() {
@@ -675,6 +707,7 @@ $("#myModal6").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -684,8 +717,10 @@ $("#myModal6").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal6').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -704,6 +739,7 @@ $("#myModal7").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#7sel1" ).click(function() {
@@ -747,6 +783,7 @@ $("#myModal7").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -756,8 +793,10 @@ $("#myModal7").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal7').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -776,6 +815,7 @@ $("#myModal8").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#8sel1" ).click(function() {
@@ -819,6 +859,7 @@ $("#myModal8").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = puntaje[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -828,8 +869,10 @@ $("#myModal8").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal8').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -848,6 +891,7 @@ $("#myModal9").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#9sel1" ).click(function() {
@@ -891,6 +935,7 @@ $("#myModal9").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -900,8 +945,10 @@ $("#myModal9").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal9').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -920,6 +967,7 @@ $("#myModal10").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#10sel1" ).click(function() {
@@ -963,6 +1011,7 @@ $("#myModal10").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -972,8 +1021,10 @@ $("#myModal10").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal10').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 
@@ -992,6 +1043,7 @@ $("#myModal11").on('show.bs.modal', function (e) {
 	var x ="";
 	var dorsal;
 	var banderita;
+	var puntaje;
 	var w ="";
 
 	$( "#11sel1" ).click(function() {
@@ -1035,6 +1087,7 @@ $("#myModal11").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
+							puntaje = docsjuga[o].puntaje;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -1044,8 +1097,10 @@ $("#myModal11").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 
        				 $('#jugador'+indexfijo+' div input').val(w)
-       				 $('#jugador'+indexfijo+' div span').text(dorsal)
+       				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
+       				 $('#jugador'+indexfijo+' div span').text(puntaje)
        				 $('#myModal11').modal('hide');
+       				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
 
 

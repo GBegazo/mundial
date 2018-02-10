@@ -68,8 +68,11 @@
     font-family: fantasy;
   }
   #equipoideal3d {
-      background: transparent url(https://static3.marialunarillos.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/a/campo-de-f_tbol.jpg) no-repeat scroll 0 0;
-      height: 850px;
+      background: transparent url("campofutbol.jpg");
+      background-position: center center;
+      background-repeat : no-repeat; 
+      background-size: cover;
+
   }
   
  
@@ -104,7 +107,7 @@
   }
 
   .input-cancha{
-      width: 100px;;
+      width: 120px;;
   }
 
   .arquero{
