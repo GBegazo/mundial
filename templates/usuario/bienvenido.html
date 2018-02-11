@@ -15,8 +15,27 @@
 
 {% block content %}
   {% csrf_token %}
- 
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+  {% if username is None %}
+      <div class="navbar-brand" id="nombreUsuario" >Hola q hace</div>
+  {% else %}
+      <div class="navbar-brand" id="nombreUsuario" >Bienvenido :{{ username }}</div>
+  {% endif %}
+
+
+    </div>
+    <!--
+    <ul class="nav navbar-nav">
+      <li><a href="#">Page 1</a></li>
+    </ul>
+  -->
+  </div>
+</nav>
+ 
 <br><br><br><br><br><br>
 <div class="row">
   <div class="col-lg-4">
@@ -95,6 +114,6 @@
   {% endblock %}
   {% block script%}
   
-  <script src="{% static 'js/conexion2.js' %}" ></script>
+  <script src="{% static 'js/conexion.js' %}" ></script>
 
   {%endblock %}

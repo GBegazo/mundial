@@ -33,7 +33,7 @@ class Jugadores(models.Model):
 class Equipo(models.Model):
 	tactica = models.IntegerField()
 	jugadores = models.ManyToManyField(Jugadores)
-	usuario=models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
+	usuario = models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
 	
 
 

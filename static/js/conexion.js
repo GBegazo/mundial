@@ -1,15 +1,35 @@
 
-var serviceURL = "https://"+window.location.hostname+"/juegosmundial/";
-//var serviceURL = "http://"+window.location.hostname+":8000/juegosmundial/";
+//var serviceURL = "https://"+window.location.hostname+"/juegosmundial/";
+var serviceURL = "http://"+window.location.hostname+":8000/juegosmundial/";
 console.log(serviceURL)
 
 getTiposList();
 getjugadores();
+obtenerUsuario();
 
 $(document).ajaxError(function(event, request, settings) {
     console.log("conexion Ajax");
     alert("Error conectadose al servidor");
 });
+
+function obtenerUsuario(){
+    console.log("gg wp")    
+    valnombre = $("#nombreUsuario").text()    
+    var nomUsu = valnombre.split(":");
+    console.log("abajo lo q hay")
+    console.log(nomUsu[1])
+    console.log(typeof(nomUsu[1]))
+    if (nomUsu[1] == "") {
+        console.log("esta vacio el usuario")
+        var conservar = localStorage.getItem("nomUsuario");
+        console.log(conservar)
+    }else{
+        console.log("podriamamos conservar")
+        console.log(nomUsu[1])
+        localStorage.setItem("nomUsuario", nomUsu[1] );
+    }
+    
+}
 
 function getTiposList() {
     var docs = [""];
@@ -20,18 +40,18 @@ function getTiposList() {
         async: false,
         success: function(data) {
 
-    	console.log(data);
-        console.log(typeof(data));
-        console.log(data[0]);
-        console.log(data[1]);
+    	//console.log(data);
+        //console.log(typeof(data));
+        //console.log(data[0]);
+        //console.log(data[1]);
         var auxpreguntas = data[0];
         var auxrespuestas = data[1];
 
         for (var i = 0; i < auxpreguntas.length; i++) {
 
-            console.log(auxpreguntas[i]);
-            console.log(auxpreguntas[i].fields.descripcion);
-            console.log(auxpreguntas[i].fields.correcta);
+            //console.log(auxpreguntas[i]);
+            //console.log(auxpreguntas[i].fields.descripcion);
+            //console.log(auxpreguntas[i].fields.correcta);
             var arrayrespuestas = []
             for (var j = 0; j < auxpreguntas[i].fields.respuestas.length; j++) {
                 var respXpreg = auxpreguntas[i].fields.respuestas[j]; 
@@ -61,7 +81,7 @@ function getTiposList() {
     console.log(docs)
 
 
-    localStorage.setItem("probemos", JSON.stringify(docs));   
+    localStorage.setItem("probemos", JSON.stringify(docs));
   
 }
 
@@ -76,7 +96,7 @@ function getjugadores() {
         
         for (var i = 0; i < data.length; i++) {
 
-            console.log(data[i])
+            //console.log(data[i])
 
             docsjuga.push({
                 nombre : data[i].fields.nombre,

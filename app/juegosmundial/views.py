@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.core import serializers
 
 from app.juegosmundial.models import Pregunta,Respuesta,Jugadores
+
+from app.juegosmundial.forms import EquipoForm
 # Create your views here.
 
 
@@ -63,3 +65,13 @@ def listadojugadores(request):
 
 def equipoidealjuegos(request):
 	return render(request, 'juegos/EquipoIdealJuego.html')
+
+def equipo_view(request):
+	if request.method == 'POST':
+		form = EquipoForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('juegosmundial:juegos_listar')
+	else:
+		form = EquipoForm()
+	return render(request,'juegos/EquipoIdealJuego.html',{'form':form})

@@ -133,4 +133,4 @@ STATIC_URL = '/static/'
 # static nombre de la carpeta para archivos staticos
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
-LOGIN_REDIRECT_URL = reverse_lazy('juegosmundial:juegos_listar')
+#LOGIN_REDIRECT_URL = reverse_lazy('juegosmundial:juegos_listar')

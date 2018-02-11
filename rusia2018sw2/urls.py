@@ -20,10 +20,13 @@ from django.contrib.auth.views import login
 from django.conf import settings
 from django.conf.urls.static import static
 
+from app.usuario.views import (login_view, register_view, logout_view)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('juegosmundial/', include ('app.juegosmundial.urls',namespace = 'juegosmundial')),
     url(r'^usuario/', include('app.usuario.urls', namespace='usuario')),
-    url(r'^$', login,{'template_name':'usuario/index.html'},name='login'),
+    #url(r'^$', login,{'template_name':'usuario/index.html'},name='login'),
+    url(r'^$', login_view, name='login'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
 
+var nombreUsuario = localStorage.getItem("nomUsuario");
+console.log(nombreUsuario)
+$("#nombreUsuario").text("Equipo ideal por :"+nombreUsuario) 
+
+
   	var cont1;
   	var cont2;
   	var cont3;
