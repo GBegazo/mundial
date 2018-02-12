@@ -37,7 +37,7 @@ $("#nombreUsuario").text("Equipo ideal por :"+nombreUsuario)
         $("#arquero").html("");
         $("#arquero").html(
         `
-        <div id="jugador`+(++cont1)+`" class="col-xs-offset-4 col-xs-4">
+        <div id="jugador`+(++cont1)+`" class="col-xs-offset-4 col-xs-4" name="">
             <div class="center">
                 <span class="badge">0</span>
             </div>
@@ -292,6 +292,7 @@ $("#myModal1").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#1sel1" ).click(function() {
@@ -336,6 +337,8 @@ $("#myModal1").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
+
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -345,6 +348,7 @@ $("#myModal1").on('show.bs.modal', function (e) {
        				 $('#'+indexfijo+'banderapais').html(cadbanderas)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal1').modal('hide');  
        				    	
        				 $('#puntajetotal').val(calcularpuntaje())			 
@@ -365,6 +369,7 @@ $("#myModal2").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#2sel1" ).click(function() {
@@ -409,6 +414,7 @@ $("#myModal2").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -420,6 +426,7 @@ $("#myModal2").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal2').modal('hide');   	
        				 $('#puntajetotal').val(calcularpuntaje())
    				 });
@@ -439,6 +446,7 @@ $("#myModal3").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#3sel1" ).click(function() {
@@ -483,6 +491,7 @@ $("#myModal3").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -494,6 +503,7 @@ $("#myModal3").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal3').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -516,6 +526,7 @@ $("#myModal4").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#4sel1" ).click(function() {
@@ -560,6 +571,7 @@ $("#myModal4").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -571,6 +583,7 @@ $("#myModal4").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal4').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -593,6 +606,7 @@ $("#myModal5").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#5sel1" ).click(function() {
@@ -636,7 +650,8 @@ $("#myModal5").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
-							puntaje = docsjuga[o].puntaje
+							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -648,6 +663,7 @@ $("#myModal5").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal5').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -669,6 +685,7 @@ $("#myModal6").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#6sel1" ).click(function() {
@@ -713,6 +730,7 @@ $("#myModal6").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -724,6 +742,7 @@ $("#myModal6").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal6').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -745,6 +764,7 @@ $("#myModal7").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var o;
 	var w ="";
 
 	$( "#7sel1" ).click(function() {
@@ -789,6 +809,7 @@ $("#myModal7").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -800,6 +821,7 @@ $("#myModal7").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal7').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -821,6 +843,7 @@ $("#myModal8").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#8sel1" ).click(function() {
@@ -865,6 +888,7 @@ $("#myModal8").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = puntaje[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -876,6 +900,7 @@ $("#myModal8").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal8').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -897,6 +922,7 @@ $("#myModal9").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#9sel1" ).click(function() {
@@ -941,6 +967,7 @@ $("#myModal9").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -952,6 +979,7 @@ $("#myModal9").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal9').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -973,6 +1001,7 @@ $("#myModal10").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#10sel1" ).click(function() {
@@ -1017,6 +1046,7 @@ $("#myModal10").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -1028,6 +1058,7 @@ $("#myModal10").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal10').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -1049,6 +1080,7 @@ $("#myModal11").on('show.bs.modal', function (e) {
 	var dorsal;
 	var banderita;
 	var puntaje;
+  var numJuga;
 	var w ="";
 
 	$( "#11sel1" ).click(function() {
@@ -1093,6 +1125,7 @@ $("#myModal11").on('show.bs.modal', function (e) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
 							puntaje = docsjuga[o].puntaje;
+              numJuga = o;
 						}	
 					}
 					 console.log("antes de guardar"+indexfijo)
@@ -1104,6 +1137,7 @@ $("#myModal11").on('show.bs.modal', function (e) {
        				 $('#jugador'+indexfijo+' div input').val(w)
        				 $('#jugador'+indexfijo+' div input').val(dorsal+' - '+w)
        				 $('#jugador'+indexfijo+' div span').text(puntaje)
+               $('#jugador'+indexfijo+'').attr('name',numJuga);
        				 $('#myModal11').modal('hide');
        				 $('#puntajetotal').val(calcularpuntaje())	
    				 });
@@ -1124,20 +1158,34 @@ $("#myModal11").on('show.bs.modal', function (e) {
 });
 
 
-function seleccionar_todo(numtactica){ 
+function seleccionar_todo(numtactica, numJu){ 
   $('#id_tactica').val(numtactica);
 
-   for (i=0;i<352;i++) {
+
+
+   //for (i=0;i<352;i++) {
 
       console.log("entro al for")
-        if($('#id_jugadores_'+i+'').val() == 10) {
-          console.log("entro")
-          $('#id_jugadores_'+i+'').prop('checked', true);
-        }
+        //if($('#id_jugadores_'+i+'').val() == numJu) {
+          //console.log("entro")
+          //$('#id_jugadores_'+i+'').prop('checked', true);
+        //}
+      for (var b = 0; b < numJu.length; b++) {
+        $('#id_jugadores_'+(numJu[b]-1)+'').prop('checked', true);
+      }
       
-   }
+   //}
 
-   $("#id_usuario option[value="+ 3 +"]").attr("selected",true);
+   var auxnombreUsuario = localStorage.getItem("nomUsuario");
+
+   for (var h = 0; h <= 10; h++) {
+      var aux = $("#id_usuario option[value="+ h +"]").text()
+      if (aux == auxnombreUsuario) {
+          $("#id_usuario option[value="+ h +"]").attr("selected",true);
+      }    
+     
+   }
+   
    //$("#guardarequipo").click();
 
 } 
@@ -1161,9 +1209,15 @@ $("#guardadofinal").click(function(){
     }
     console.log(forma);
     console.log(formaint);
-
+    console.log("gg wpdd")
+   
     var listjuga = []
-    
-    //seleccionar_todo(formaint);
+
+    for (var n = 1; n <= 11; n++) {
+      var opc = $('#jugador'+n+'').attr('name');
+      listjuga.push(opc)
+    }
+   
+    seleccionar_todo(formaint,listjuga);
 
 });
