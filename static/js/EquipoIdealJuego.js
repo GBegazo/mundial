@@ -1122,3 +1122,48 @@ $("#myModal11").on('show.bs.modal', function (e) {
 
 
 });
+
+
+function seleccionar_todo(numtactica){ 
+  $('#id_tactica').val(numtactica);
+
+   for (i=0;i<352;i++) {
+
+      console.log("entro al for")
+        if($('#id_jugadores_'+i+'').val() == 10) {
+          console.log("entro")
+          $('#id_jugadores_'+i+'').prop('checked', true);
+        }
+      
+   }
+
+   $("#id_usuario option[value="+ 3 +"]").attr("selected",true);
+   //$("#guardarequipo").click();
+
+} 
+
+
+$("#guardadofinal").click(function(){
+
+
+    var forma = $("#drop-formaciones").text()
+    var formaint;
+    if (forma=="4-4-2") {
+      formaint = 1
+    }else if(forma=="4-3-3"){
+      formaint = 2
+    }else if(forma=="3-4-3"){
+      formaint = 3
+    }else if(forma=="4-5-1"){
+      formaint = 4
+    }else if(forma=="5-4-1"){
+      formaint = 5
+    }
+    console.log(forma);
+    console.log(formaint);
+
+    var listjuga = []
+    
+    //seleccionar_todo(formaint);
+
+});

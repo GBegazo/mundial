@@ -82,7 +82,7 @@
                     <tr>
                         <td>
                             <div>
-                                <button id="myBtn" class="btn btn-primary dropdown-toggle botones" type="button" onclick="">Guardar</button>
+                                <button id="guardadofinal" class="btn btn-primary dropdown-toggle botones" type="button" onclick="">Guardar</button>
                             </div>
                         </td>
                     </tr>
@@ -578,6 +578,11 @@
 
   <!-- Modalllllllllllllllllll -->
 
+<form method="post" name="f1" style="display: none">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" id="guardarequipo">Guardar Equipo</button>
+</form>
   {% endblock %}
   {% block script%}
 

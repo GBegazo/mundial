@@ -21,7 +21,7 @@
     <div class="navbar-header">
 
   {% if username is None %}
-      <div class="navbar-brand" id="nombreUsuario" >Hola q hace</div>
+      <div class="navbar-brand" id="nombreUsuario" >Bienvenido :{{ username }}</div>
   {% else %}
       <div class="navbar-brand" id="nombreUsuario" >Bienvenido :{{ username }}</div>
   {% endif %}

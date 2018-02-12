@@ -22,7 +22,8 @@ function obtenerUsuario(){
     if (nomUsu[1] == "") {
         console.log("esta vacio el usuario")
         var conservar = localStorage.getItem("nomUsuario");
-        console.log(conservar)
+        console.log(conservar)       
+        $("#nombreUsuario").text("Bienvenido :"+conservar) 
     }else{
         console.log("podriamamos conservar")
         console.log(nomUsu[1])
