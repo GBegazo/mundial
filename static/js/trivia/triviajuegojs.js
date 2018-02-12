@@ -83,8 +83,8 @@ console.log("despues del viajedel viaje")
         console.log("Estas en la pregunta : " + now);
         if (now > cantPreguntas) {
             localStorage.setItem("puntos", JSON.stringify(auxpuntos));
-            //window.location.href = "https://"+window.location.hostname+"/juegosmundial/triviafinal";
-            window.location.href = "http://"+window.location.hostname+":8000/juegosmundial/triviafinal";
+            window.location.href = "https://"+window.location.hostname+"/juegosmundial/triviafinal";
+            //window.location.href = "http://"+window.location.hostname+":8000/juegosmundial/triviafinal";
         } else {
             ancho = ancho + Math.round(100 / cantPreguntas);
             document.getElementById("progresopreg").style.width = ancho + "%";
@@ -97,8 +97,8 @@ console.log("despues del viajedel viaje")
                     localStorage.setItem("puntos", JSON.stringify(auxpuntos));
                     var urll = String(window.location.hostname);             
                     console.log(window.location.hostname);
-                    //window.location.href = "https://"+window.location.hostname+"/juegosmundial/triviafinal";
-                    window.location.href = "http://"+window.location.hostname+":8000/juegosmundial/triviafinal";
+                    window.location.href = "https://"+window.location.hostname+"/juegosmundial/triviafinal";
+                    //window.location.href = "http://"+window.location.hostname+":8000/juegosmundial/triviafinal";
                 }, 1500);
             } else {
                 var choice;

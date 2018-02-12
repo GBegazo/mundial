@@ -86,6 +86,13 @@
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <a href="{% url 'juegosmundial:juegos_listar' %}" class="btn btn-primary btn-lg">Regresar al Menú Principal</a>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -581,7 +588,7 @@
 <form method="post" name="f1" style="display: none">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit" id="guardarequipo">Guardar Equipo</button>
+  <button type="submit" id="guardarequipo">Guardar Equipo y Salir</button>
 </form>
   {% endblock %}
   {% block script%}

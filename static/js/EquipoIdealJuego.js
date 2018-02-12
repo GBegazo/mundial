@@ -1186,7 +1186,7 @@ function seleccionar_todo(numtactica, numJu){
      
    }
    
-   //$("#guardarequipo").click();
+   $("#guardarequipo").click();
 
 } 
 

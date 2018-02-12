@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core import serializers
 
-from app.juegosmundial.models import Pregunta,Respuesta,Jugadores
+from app.juegosmundial.models import Pregunta,Respuesta,Jugadores,Equipo
 
 from app.juegosmundial.forms import EquipoForm
 # Create your views here.
@@ -75,3 +75,10 @@ def equipo_view(request):
 	else:
 		form = EquipoForm()
 	return render(request,'juegos/EquipoIdealJuego.html',{'form':form})
+
+def equiposguardados(request):
+	equipos = Equipo.objects.all()
+	
+	listaequipo = serializers.serialize('json', equipos)
+	
+	return HttpResponse(listaequipo, content_type='application/json')	
