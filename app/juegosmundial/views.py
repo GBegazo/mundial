@@ -82,3 +82,23 @@ def equiposguardados(request):
 	listaequipo = serializers.serialize('json', equipos)
 	
 	return HttpResponse(listaequipo, content_type='application/json')	
+
+def apuesta(request):
+	return render(request, 'juegos/polla/polla.html')
+
+def grupoA(request):
+	return render(request, 'juegos/polla/grupoa.html')
+def grupoB(request):
+	return render(request, 'juegos/polla/grupob.html')
+def grupoC(request):
+	return render(request, 'juegos/polla/grupoc.html')
+def grupoD(request):
+	return render(request, 'juegos/polla/grupod.html')
+def grupoE(request):
+	return render(request, 'juegos/polla/grupoe.html')
+def grupoF(request):
+	return render(request, 'juegos/polla/grupof.html')
+def grupoG(request):
+	return render(request, 'juegos/polla/grupog.html')
+def grupoH(request):
+	return render(request, 'juegos/polla/grupoh.html')
