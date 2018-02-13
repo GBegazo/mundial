@@ -887,7 +887,7 @@ $("#myModal8").on('show.bs.modal', function (e) {
 						if (docsjuga[o].nombre == w) {
 							dorsal = docsjuga[o].dorsal;
 							banderita = docsjuga[o].pais;
-							puntaje = puntaje[o].puntaje;
+							puntaje = docsjuga[o].puntaje;
               numJuga = o;
 						}	
 					}
@@ -1145,15 +1145,8 @@ $("#myModal11").on('show.bs.modal', function (e) {
 
 });
 
-
 ///////////////////////////////////////
 ////////////////////////
-
-
-///////////////////////////////////////
-
-
-
 
 });
 
