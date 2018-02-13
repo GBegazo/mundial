@@ -23,14 +23,14 @@ urlpatterns = [
     #agregando apuesta
     url(r'^apuesta/',apuesta, name='apuesta'),
 
-    url(r'^grupoA/',grupoA, name='grupoA'),
-    url(r'^grupoB/',grupoB, name='grupoB'),
-    url(r'^grupoC/',grupoC, name='grupoC'),
-    url(r'^grupoD/',grupoD, name='grupoD'),
-    url(r'^grupoE/',grupoE, name='grupoE'),
-    url(r'^grupoF/',grupoF, name='grupoF'),
-    url(r'^grupoG/',grupoG, name='grupoG'),
-    url(r'^grupoH/',grupoH, name='grupoH'),
+    url(r'^grupoa/',grupoA, name='grupoA'),
+    url(r'^grupob/',grupoB, name='grupoB'),
+    url(r'^grupoc/',grupoC, name='grupoC'),
+    url(r'^grupod/',grupoD, name='grupoD'),
+    url(r'^grupoe/',grupoE, name='grupoE'),
+    url(r'^grupof/',grupoF, name='grupoF'),
+    url(r'^grupog/',grupoG, name='grupoG'),
+    url(r'^grupoh/',grupoH, name='grupoH'),
 
 
     
