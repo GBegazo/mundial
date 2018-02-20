@@ -6,6 +6,9 @@ from app.juegosmundial.models import Pregunta,Respuesta,Jugadores,Equipo
 
 from app.juegosmundial.forms import EquipoForm
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
+
+
 
 
 def index_juegosmundial(request):
@@ -75,6 +78,18 @@ def equipo_view(request):
 	else:
 		form = EquipoForm()
 	return render(request,'juegos/EquipoIdealJuego.html',{'form':form})
+
+
+@csrf_exempt
+def validar(self,request,response):
+	print("entro a validar")
+	if request.method == 'POST':
+		xd = response.getvalue()
+		print("holita")
+	else:
+		print("mal")
+	return "true"
+
 
 def equiposguardados(request):
 	equipos = Equipo.objects.all()
